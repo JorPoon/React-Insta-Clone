@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css"
+// import iglogo from "./img"
 
 
 class SearchBar extends React.Component {
