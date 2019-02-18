@@ -1,11 +1,12 @@
 import React from "react";
+import "./SearchBar.css"
 
 
 class SearchBar extends React.Component {
-    constructor() {
-        super();
-        this.state= ""
-    }
+    // constructor() {
+    //     super();
+    //     this.state= ""
+    // }
     render() {
         return (
             <div className="searchNav">
