@@ -2,3 +2,14 @@
     width: 50%;
     height: auto;
 }
+
+.postCard {
+    margin: 15px 0;
+    border: 1px solid red;
+}
+
+.thumbNail {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%
+}

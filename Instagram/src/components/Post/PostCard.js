@@ -1,4 +1,5 @@
 import React from "react";
+import CommentSection from "../Comment/CommentSection";
 import { Card, CardBody, Button, CardTitle, CardText, CardImg, CardHeader } from 'reactstrap';
 import "./PostCard.css"
 
@@ -6,9 +7,11 @@ import "./PostCard.css"
 const PostCard = (props) => {
   console.log(props)
     return (
-      <div>
-      <Card>
-        <CardHeader>{props.username}</CardHeader>
+      <Card className="postCard">
+        <CardHeader>
+          <CardImg className="thumbNail" src={props.thumbnailUrl} alt="icon image"/>
+        {props.username}
+        </CardHeader>
         <CardImg className="postImage" src={props.imageUrl} alt="Card image cap" />
         {/* <CardBody>
           <CardTitle>Card Title</CardTitle>
@@ -17,8 +20,10 @@ const PostCard = (props) => {
             <small className="text-muted">Last updated 3 mins ago</small>
           </CardText>
         </CardBody> */}
+        <div className="commentList">
+        <CommentSection  comments={props.comments}/>
+        </div>
       </Card>
-    </div>
     );
   };
   

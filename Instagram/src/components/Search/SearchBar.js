@@ -21,7 +21,8 @@ class SearchBar extends React.Component {
                
                 <div className="navigationIcons">
                     <img src="" alt="location"/>
-                    <img src="" alt="heart"/>
+                    {/* <img src="" alt="heart"/> */}
+                    <i className="fa fa-heart" />
                     <img src="" alt="profile"/>
                 </div>
             </div>
