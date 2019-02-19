@@ -11,13 +11,32 @@ class App extends Component {
         dummyData
       }
     }
-  render() {
+    submitNewComment = (e, newComment, imageUrl) => {
+      e.preventDefault();
+      const newCommentObject = {
+        username: "philz",
+        text: newComment
+      }
+
+      this.setState({
+        dummyData: this.state.dummyData.map(post => {
+          return post.imageUrl === imageUrl ? 
+          {...post, 
+            comments: [...post.comments, newCommentObject]
+          } : post
+        })
+      })
+
+    }
+  
+    render() {
     console.log(dummyData);
     return (
       <div className="App">
           <SearchBar />
           <PostContainer 
           dummyDatas={this.state.dummyData}
+          handleSubmit={this.submitNewComment}
            />
       </div>
     );

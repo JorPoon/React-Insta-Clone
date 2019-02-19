@@ -1,5 +1,5 @@
 import React from "react";
-import One from "./One";
+
 
 // const Comment= (props) => {
 //     console.log(props);
@@ -16,9 +16,10 @@ const Comment = props => {
   console.log("props")
     return (
       <div className="comment-text">
-      {props.comments.map( (comment, index) => {
+      {/* {props.comments.map( (comment, index) => {
         return <One username={comment.username} text={comment.text} key={index}/>
-      })}
+      })} */}
+      <p> <strong>{props.comment.username}</strong>: {props.comment.text} </p>
       </div>
     
     )

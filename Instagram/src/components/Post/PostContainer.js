@@ -8,11 +8,13 @@ const PostContainer = (props) => {
     return (
         <div className="container">
            { props.dummyDatas.map(data => 
-             <PostCard key={data.timestamp} 
-             username={data.username}
-             imageUrl={data.imageUrl}
-             thumbnailUrl={data.thumbnailUrl}
-             comments={data.comments}
+             <PostCard key={data.imageUrl} 
+            //  username={data.username}
+            //  imageUrl={data.imageUrl}
+            //  thumbnailUrl={data.thumbnailUrl}
+            //  comments={data.comments}
+            post={data}
+            handleSubmit={props.handleSubmit}
              />
             )}
         </div>
