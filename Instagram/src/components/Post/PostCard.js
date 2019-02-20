@@ -5,7 +5,7 @@ import "./PostCard.css"
 
  
 const PostCard = (props) => {
-  console.log(props)
+  //console.log(props)
     return (
       <Card className="postCard">
         <CardHeader>
@@ -24,6 +24,7 @@ const PostCard = (props) => {
         <CommentSection  
         comments={props.post.comments} 
         imageUrl={props.post.imageUrl}
+        likes={props.post.likes}
         handleSubmit={props.handleSubmit}
         />
        

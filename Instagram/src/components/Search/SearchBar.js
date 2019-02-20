@@ -3,12 +3,10 @@ import "./SearchBar.css"
 // import iglogo from "./img"
 
 
-class SearchBar extends React.Component {
-    // constructor() {
-    //     super();
-    //     this.state= ""
-    // }
-    render() {
+const SearchBar = props => {
+    // constructor(props) {
+    //     super(props);
+    //     this.state= 
         return (
             <div className="searchNav">
 
@@ -17,7 +15,7 @@ class SearchBar extends React.Component {
                     <img src="" alt="Instagram Logo"/>
                 </div>
                 
-                <input type="text" placeholder="Search"/>
+                <input type="text" placeholder="Search" onSubmit={props.filterPost} />
                
                 <div className="navigationIcons">
                     <img src="" alt="location"/>
@@ -27,7 +25,7 @@ class SearchBar extends React.Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default SearchBar;

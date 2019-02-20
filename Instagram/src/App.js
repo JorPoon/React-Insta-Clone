@@ -28,12 +28,25 @@ class App extends Component {
       })
 
     }
+
+    // filterPost = (e) => {
+    //   e.preventDefault();
+    //   this.setState({
+    //     dummyData: this.state.dummyData.filter(post => {
+    //       return post.username === username ? 
+    //       post : null
+    //     })
+    //   })
+    // }
+
+    
   
     render() {
-    console.log(dummyData);
+    //console.log(this.state.dummyData);
     return (
       <div className="App">
-          <SearchBar />
+          <SearchBar />  
+          {/* filterPost={this.filterPost}  */}
           <PostContainer 
           dummyDatas={this.state.dummyData}
           handleSubmit={this.submitNewComment}

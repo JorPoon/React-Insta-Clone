@@ -4,7 +4,7 @@ import PostCard from "./PostCard";
 import CommentSection from "../Comment/CommentSection";
 
 const PostContainer = (props) => {
-    console.log(props)
+    //console.log(props)
     return (
         <div className="container">
            { props.dummyDatas.map(data => 
