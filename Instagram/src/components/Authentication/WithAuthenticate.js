@@ -1,7 +1,7 @@
 import React from "react";
 
 const WithAuthenticate = FirstComponent =>  SecondComponent => props => {
- if (localStorage.getItem("user")) {
+ if (localStorage.getItem("user") && localStorage.getItem("password")) {
     return <FirstComponent />
  }
     return <SecondComponent />
