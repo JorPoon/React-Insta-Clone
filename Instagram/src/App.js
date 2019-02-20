@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import PostPage from "./components/Post/PostPage";
+import WithAuthenticate from "./components/Authentication/WithAuthenticate";
+import LogInPage from './components/LogIn/LogInPage';
 
 
 class App extends Component {
@@ -33,8 +35,15 @@ class App extends Component {
     render() {
       //console.log(this.state.dummyData);
       return (
-  
-        <PostPage />
+        
+       <div>
+
+         <WithAuthenticate />
+         <LogInPage />
+        {/* <PostPage /> */}
+
+       </div>
+        
         // <div className="App">
         //     <SearchBar />  
         //     {/* filterPost={this.filterPost}  */}
