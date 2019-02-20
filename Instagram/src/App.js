@@ -4,11 +4,13 @@ import PostPage from "./components/Post/PostPage";
 import WithAuthenticate from "./components/Authentication/WithAuthenticate";
 import LogInPage from './components/LogIn/LogInPage';
 
+const Clone = WithAuthenticate(PostPage)(LogInPage);
 
 class App extends Component {
     constructor () {
       super();
       this.state= {
+        username: ""
         // dummyData
       }
     }
@@ -38,8 +40,8 @@ class App extends Component {
         
        <div>
 
-         <WithAuthenticate />
-         <LogInPage />
+         <Clone />
+         {/* <LogInPage /> */}
         {/* <PostPage /> */}
 
        </div>

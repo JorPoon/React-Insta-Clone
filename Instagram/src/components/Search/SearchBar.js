@@ -21,7 +21,7 @@ const SearchBar = props => {
                     <img src="" alt="location"/>
                     {/* <img src="" alt="heart"/> */}
                     <i className="fa fa-heart" />
-                    <img src="" alt="profile"/>
+                    <img src="" alt="profile" onClick={props.logOut}/>
                 </div>
             </div>
         )

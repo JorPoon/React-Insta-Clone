@@ -33,6 +33,12 @@ class PostPage extends Component {
 
     }
 
+    LogOut = (e) => {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.reload();
+    }
+
     // filterPost = (e) => {
     //   e.preventDefault();
     //   this.setState({
@@ -49,7 +55,7 @@ class PostPage extends Component {
     //console.log(this.state.dummyData);
     return (
       <div className="PostPage">
-          <SearchBar />  
+          <SearchBar logOut={this.LogOut} />  
           {/* filterPost={this.filterPost}  */}
           <PostContainer 
           dummyDatas={this.state.dummyData}

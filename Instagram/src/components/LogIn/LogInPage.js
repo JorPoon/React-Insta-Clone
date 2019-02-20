@@ -16,12 +16,14 @@ class LogInPage extends React.Component {
   render() {
       return (
         <div className="log-in">
+        <p>UserName
           <input 
           type="text"
           value={this.state.username}
           onChange={this.handleChanges}
           />
           <button onClick={this.logIn}>Log In</button>
+          </p>
         </div>
       )
   }
