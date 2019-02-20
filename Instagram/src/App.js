@@ -1,33 +1,51 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from "./dummy-data";
-import SearchBar from "./components/Search/SearchBar";
-import PostContainer from './components/Post/PostContainer';
+import PostPage from "./components/Post/PostPage";
+
 
 class App extends Component {
     constructor () {
       super();
       this.state= {
-        dummyData
+        // dummyData
       }
     }
-    submitNewComment = (e, newComment, imageUrl) => {
-      e.preventDefault();
-      const newCommentObject = {
-        username: "philz",
-        text: newComment
-      }
 
-      this.setState({
-        dummyData: this.state.dummyData.map(post => {
-          return post.imageUrl === imageUrl ? 
-          {...post, 
-            comments: [...post.comments, newCommentObject]
-          } : post
-        })
-      })
+    // componentDidMount() {
+    //   this.setState({ dummyData: dummyData});
+    // }
 
-    }
+    // submitNewComment = (e, newComment, imageUrl) => {
+    //   e.preventDefault();
+    //   const newCommentObject = {
+    //     username: "philz",
+    //     text: newComment
+    //   }
+
+      // this.setState({
+      //   dummyData: this.state.dummyData.map(post => {
+      //     return post.imageUrl === imageUrl ? 
+      //     {...post, 
+      //       comments: [...post.comments, newCommentObject]
+      //     } : post
+      //   })
+      // })
+    render() {
+      //console.log(this.state.dummyData);
+      return (
+  
+        <PostPage />
+        // <div className="App">
+        //     <SearchBar />  
+        //     {/* filterPost={this.filterPost}  */}
+        //     <PostContainer 
+        //     dummyDatas={this.state.dummyData}
+        //     handleSubmit={this.submitNewComment}
+        //      />
+        // </div>
+      );
+  }
+}
 
     // filterPost = (e) => {
     //   e.preventDefault();
@@ -41,19 +59,8 @@ class App extends Component {
 
     
   
-    render() {
-    //console.log(this.state.dummyData);
-    return (
-      <div className="App">
-          <SearchBar />  
-          {/* filterPost={this.filterPost}  */}
-          <PostContainer 
-          dummyDatas={this.state.dummyData}
-          handleSubmit={this.submitNewComment}
-           />
-      </div>
-    );
-  }
-}
+    
+
+
 
 export default App;
