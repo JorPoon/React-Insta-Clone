@@ -6,7 +6,9 @@ import "./SearchBar.css"
 const SearchBar = props => {
     // constructor(props) {
     //     super(props);
-    //     this.state= 
+    //     this.state=
+
+
         return (
             <div className="searchNav">
 
@@ -15,7 +17,7 @@ const SearchBar = props => {
                     <img src="" alt="Instagram Logo"/>
                 </div>
                 
-                <input type="text" placeholder="Search" onSubmit={props.filterPost} />
+                <input type="text" placeholder="Search" onSubmit={props.filterPost}  />
                
                 <div className="navigationIcons">
                     <img src="" alt="location"/>

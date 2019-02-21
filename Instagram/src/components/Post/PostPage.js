@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import dummyData from "../../dummy-data";
 import SearchBar from "../Search/SearchBar";
 import PostContainer from "./PostContainer";
+import LogInPage from "../LogIn/LogInPage";
 
 class PostPage extends Component {
-    constructor () {
-      super();
+    constructor (props) {
+      super(props);
       this.state= {
-        dummyData
+        dummyData: [],
+        search: "",
       }
     }
 
@@ -18,7 +20,7 @@ class PostPage extends Component {
     submitNewComment = (e, newComment, imageUrl) => {
       e.preventDefault();
       const newCommentObject = {
-        username: "philz",
+        username: localStorage.getItem("user"),
         text: newComment
       }
 
@@ -39,15 +41,16 @@ class PostPage extends Component {
         window.location.reload();
     }
 
-    // filterPost = (e) => {
-    //   e.preventDefault();
-    //   this.setState({
-    //     dummyData: this.state.dummyData.filter(post => {
-    //       return post.username === username ? 
-    //       post : null
-    //     })
-    //   })
-    // }
+    filterPost = (e, username) => {
+      e.preventDefault();
+      this.setState({
+        dummyData: this.state.dummyData.filter(post => {
+          return post.username === username ? 
+          post : null
+        })
+      })
+    }
+
 
     
   
@@ -55,7 +58,7 @@ class PostPage extends Component {
     //console.log(this.state.dummyData);
     return (
       <div className="PostPage">
-          <SearchBar logOut={this.LogOut} />  
+          <SearchBar logOut={this.LogOut} onSubmit={this.filterPost} />  
           {/* filterPost={this.filterPost}  */}
           <PostContainer 
           dummyDatas={this.state.dummyData}

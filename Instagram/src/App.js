@@ -3,6 +3,7 @@ import './App.css';
 import PostPage from "./components/Post/PostPage";
 import WithAuthenticate from "./components/Authentication/WithAuthenticate";
 import LogInPage from './components/LogIn/LogInPage';
+import dummyData from "./dummy-data";
 
 const Clone = WithAuthenticate(PostPage)(LogInPage);
 
@@ -11,8 +12,8 @@ class App extends Component {
       super();
       this.state= {
         username: "",
-        password: ""
-        // dummyData
+        password: "",
+         dummyData
       }
     }
 
@@ -42,7 +43,7 @@ class App extends Component {
        <div>
 
          <Clone />
-         {/* <LogInPage /> */}
+        {/* <LogInPage /> */}
         {/* <PostPage /> */}
 
        </div>
