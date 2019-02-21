@@ -11,6 +11,12 @@ border: none;
 border-radius: 3px;
 color: white;
 
+&:hover {
+  padding: 0.5em 3em;
+  background-color: lavender;
+  color: gray;
+}
+
 ${props =>
   props.primary &&
   css`
@@ -23,7 +29,19 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-top: 15px
+`
 
+const LoggerBorder = styled.div`
+margin: 200px 400px;
+border: 1px solid black;
+border-radius: 50px;
+background-color: rgba(50, 115, 220, 0.3);
+`
+
+const Stagram = styled.h1`
+font-family: "Comic Sans MS", cursive, sans-serif;
+text-decoration: underline;
 `
 
 class LogInPage extends React.Component {
@@ -45,9 +63,10 @@ class LogInPage extends React.Component {
   render() {
       return (
 
-      <div className="log-in">
+      <LoggerBorder className="log-in">
 
         <Liv inline>
+            <Stagram>CloneStagram</Stagram>
         <FormGroup>
         <Label>UserName </Label>
           <Input 
@@ -71,7 +90,7 @@ class LogInPage extends React.Component {
           <Putton primary onClick={this.logIn}>Log In</Putton>
         </Liv>
 
-        </div>
+        </LoggerBorder>
       )
   }
 
