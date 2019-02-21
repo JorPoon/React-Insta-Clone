@@ -10,6 +10,7 @@ class PostPage extends Component {
       this.state= {
         dummyData: [],
         search: "",
+        array: dummyData,
       }
     }
 
@@ -45,9 +46,11 @@ class PostPage extends Component {
 
 
     filterPost = (e) => {
-      e.preventDefault();
+    e.preventDefault();
      this.setState({
-       dummyData: this.state.dummyData.filter(post =>  post.username === this.state.search)
+       dummyData: this.state.dummyData.filter( post => {
+         return post.username === this.state.search
+        })
       // dummyData: this.state.dummyData[1]
      })
       console.log("hello")

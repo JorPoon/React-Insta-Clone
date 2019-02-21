@@ -1,4 +1,14 @@
 import React from "react";
+import styled from "styled-components"
+
+
+const logger = styled.button`
+padding: 6px 10px;
+margin: 5px;
+border: none;
+border-radius: 3px;
+color: white;
+`;
 
 class LogInPage extends React.Component {
   state= {
