@@ -17,7 +17,14 @@ const SearchBar = props => {
                     <img src="" alt="Instagram Logo"/>
                 </div>
                 
-                <input type="text" placeholder="Search" onSubmit={props.filterPost}  />
+                <input 
+                type="text"
+                placeholder="Search" 
+                onSubmit={props.filterPost} 
+                onChange={props.searchHandleChanges}  
+                name="search"
+                value={props.search}
+                />
                
                 <div className="navigationIcons">
                     <img src="" alt="location"/>

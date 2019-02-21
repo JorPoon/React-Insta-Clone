@@ -5,8 +5,8 @@ import PostContainer from "./PostContainer";
 import LogInPage from "../LogIn/LogInPage";
 
 class PostPage extends Component {
-    constructor (props) {
-      super(props);
+    constructor () {
+      super();
       this.state= {
         dummyData: [],
         search: "",
@@ -41,24 +41,29 @@ class PostPage extends Component {
         window.location.reload();
     }
 
-    filterPost = (e, username) => {
+    searchChanges = e => {this.setState({[e.target.name]: e.target.value})}
+
+
+    filterPost = (e) => {
       e.preventDefault();
-      this.setState({
-        dummyData: this.state.dummyData.filter(post => {
-          return post.username === username ? 
-          post : null
-        })
-      })
+     this.setState({
+      //  dummyData: this.state.dummyData.filter(post => post.username === this.state.search)
+      dummyData: this.state.dummyData[1]
+     })
+      console.log("hello")
     }
 
 
     
   
     render() {
-    //console.log(this.state.dummyData);
     return (
       <div className="PostPage">
-          <SearchBar logOut={this.LogOut} onSubmit={this.filterPost} />  
+          <SearchBar logOut={this.LogOut} 
+          filterPost={this.filterPost} 
+          searchHandleChanges={this.searchChanges}
+          search={this.state.search}
+          />  
           {/* filterPost={this.filterPost}  */}
           <PostContainer 
           dummyDatas={this.state.dummyData}
