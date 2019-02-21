@@ -47,8 +47,8 @@ class PostPage extends Component {
     filterPost = (e) => {
       e.preventDefault();
      this.setState({
-      //  dummyData: this.state.dummyData.filter(post => post.username === this.state.search)
-      dummyData: this.state.dummyData[1]
+       dummyData: this.state.dummyData.filter(post =>  post.username === this.state.search)
+      // dummyData: this.state.dummyData[1]
      })
       console.log("hello")
     }
