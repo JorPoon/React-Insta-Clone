@@ -10,8 +10,11 @@
     Width: 50%;
 }
 
-.thumbNail {
+
+
+img.thumbNail.card-img {
     width: 25px;
     height: 25px;
     border-radius: 50%
 }
+

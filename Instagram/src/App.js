@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import PostPage from "./components/Post/PostPage";
-import withAuthenticate from "./components/Authentication/WithAuthenticate";
+import withAuthenticate from "./components/Authentication/withAuthenticate";
 import LogInPage from './components/LogIn/LogInPage';
 import dummyData from "./dummy-data";
+import './App.css';
 
 const Clone = withAuthenticate(PostPage)(LogInPage);
 

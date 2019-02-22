@@ -1,6 +1,12 @@
 import React from "react";
+import styled , {css} from "styled-components";
 import "./SearchBar.css"
 // import iglogo from "./img"
+
+const CloneHeader = styled.header`
+    display: flex;
+    margin: auto 10%;
+`
 
 
 const SearchBar = props => {
@@ -10,10 +16,10 @@ const SearchBar = props => {
 
 
         return (
-            <div className="searchNav">
+            <CloneHeader className="searchNav">
 
                 <div className="Logos">
-                    <img src="" alt="Camera Logo"/>
+                <i class="fa fa-camera" aria-hidden="true"></i>
                     <img src="" alt="Instagram Logo"/>
                 </div>
                 <form  onSubmit={props.filterPost} >
@@ -27,12 +33,13 @@ const SearchBar = props => {
                 />
                </form>
                 <div className="navigationIcons">
-                    <img src="" alt="location"/>
+                <i class="fa fa-location-arrow" aria-hidden="true"></i>
                     {/* <img src="" alt="heart"/> */}
                     <i className="fa fa-heart" />
-                    <img src="" alt="profile" onClick={props.logOut}/>
+                    <i class="fa fa-user-circle" aria-hidden="true" onClick={props.logOut}></i>
+                    {/* <img src="" alt="profile" onClick={props.logOut}/> */}
                 </div>
-            </div>
+            </CloneHeader>
         )
     
 }

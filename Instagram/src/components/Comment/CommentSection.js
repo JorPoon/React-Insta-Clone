@@ -30,7 +30,8 @@ class CommentSection extends React.Component {
     super(props);
         this.state={
             newComment: " ",
-            likes: this.props.likes
+            likes: this.props.likes,
+            liked: false
         }
     };
 
@@ -41,18 +42,27 @@ class CommentSection extends React.Component {
     }
 
     addLike = (e) => {
-        this.setState((prevState) => ({
-            likes: prevState.likes + 1
-        }))
+        if( !this.state.liked ) {
+            this.setState((prevState) => ({
+                likes: prevState.likes + 1,
+                liked: !prevState.liked
+            }))
+        } else {
+            this.setState((prevState) => ({
+                likes: prevState.likes - 1,
+                liked: !prevState.liked
+            }))
+        }
     }
     
     render() {
-        //console.log(this.props.comments)
+        //console.log(this.props.comments) ok
       return (
         <div className="comment-section">
-        <p> <i  onClick={this.addLike} className="fa fa-heart"/> {this.state.likes}  </p>
+        <p> {this.state.liked? <i onClick={this.addLike} className="fa fa-heart"></i> : <i onClick={this.addLike} className="fa fa-heartbeat" aria-hidden="true"></i>} {this.state.likes} </p>
+        {/* <p> <i onClick={this.addLike} className="fa fa-heart"></i>  {this.state.likes} </p> */}
         
-       
+        
        {this.props.comments.map( (comment, index) => {
         return  <Comment key={index} comment={comment} />
        })}

@@ -45,16 +45,18 @@ class PostPage extends Component {
     searchChanges = e => {this.setState({[e.target.name]: e.target.value})}
 
 
-    filterPost = (e) => {
-    e.preventDefault();
-     this.setState({
-       dummyData: this.state.dummyData.filter( post => {
-         return post.username === this.state.search
-        })
-      // dummyData: this.state.dummyData[1]
-     })
-      console.log("hello")
-    }
+    // filterPost = (e) => {
+    // e.preventDefault();
+    //  this.setState({
+    //    dummyData: this.state.dummyData.filter( post => {
+    //      return post.username
+    //             .toLowerCase()
+    //             .includes(this.state.search.toLowerCase())
+    //     })
+    //   // dummyData: this.state.dummyData[1]
+    //  })
+    //   console.log("hello")
+    // }
 
 
     
@@ -63,13 +65,17 @@ class PostPage extends Component {
     return (
       <div className="PostPage">
           <SearchBar logOut={this.LogOut} 
-          filterPost={this.filterPost} 
+          // filterPost={this.state.dummyData.filter()} 
           searchHandleChanges={this.searchChanges}
           search={this.state.search}
           />  
           {/* filterPost={this.filterPost}  */}
           <PostContainer 
-          dummyDatas={this.state.dummyData}
+          dummyDatas={this.state.dummyData.filter(post => {
+            return post.username
+                  .toLowerCase()
+                   .includes(this.state.search.toLowerCase())
+          })}
           handleSubmit={this.submitNewComment}
            />
       </div>
