@@ -1,0 +1,15 @@
+.comment-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 0 5px;
+}
+
+.comment-section {
+    text-align: start;
+}
+
+.card-header {
+    text-align: start;
+
+}

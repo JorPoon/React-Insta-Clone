@@ -1,0 +1,20 @@
+.postImage {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.postCard {
+    margin: 15px 0;
+    /* border: 1px solid black; */
+    Width: 50%;
+}
+
+
+
+img.thumbNail.card-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%
+}
+

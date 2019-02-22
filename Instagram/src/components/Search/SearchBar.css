@@ -1,0 +1,7 @@
+.searchNav {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    
+}
