@@ -68,26 +68,29 @@ class LogInPage extends React.Component {
         <Liv inline>
             <Stagram>CloneStagram</Stagram>
         <FormGroup>
-        <Label>UserName </Label>
+        {/* <Label>UserName </Label> */}
           <Input 
           type="text"
           value={this.state.username}
           onChange={this.handleChanges}
           name="username"
+          placeholder="Username"
           />
        
           </FormGroup>
           <FormGroup>
-          <Label> Password</Label>
+          {/* <Label> Password</Label> */}
             <Input 
             type="text"
             value={this.state.password}
             onChange={this.handleChanges}
             name="password"
+            placeholder="Password"
             />
          
           </FormGroup>
-          <Putton primary onClick={this.logIn}>Log In</Putton>
+          <Putton primary onClick={this.logIn}>Log In <i class="fa fa-camera" aria-hidden="true"></i> </Putton>
+          
         </Liv>
 
         </LoggerBorder>
